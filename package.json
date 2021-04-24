@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/swfideas/express-foo/issues"
   },
-  "homepage": "https://github.com/swfideas/express-foo#readme"
+  "homepage": "https://github.com/swfideas/express-foo#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
 }
