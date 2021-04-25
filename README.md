@@ -24,8 +24,21 @@ curl -vX DELETE http://localhost:3000/user
 
 
 ```shell
-# request
-curl -v http://localhost:3000
+# requests
+curl -v http://localhost:3000/users
+
+curl -vX POST http://localhost:3000/users
 # simple unit test
 npm run test
+```
+
+### 04 express routing
+
+expose at `/users` the users router
+
+```shell
+# request
+curl -v http://localhost:3000/users
+# simple unit test
+npm r
 ```
