@@ -3,11 +3,10 @@ const httpMocks = require("node-mocks-http");
 const exampleRouteHandler = require("./user-router");
 
 describe("User Router", () => {
-
   it("should return 'hello user' for GET /user", () => {
     const mockRequest = httpMocks.createRequest({
       method: "GET",
-      url: "/user"
+      url: "/user",
     });
     const mockResponse = httpMocks.createResponse();
 
@@ -17,5 +16,4 @@ describe("User Router", () => {
     const expectedResponseBody = "hello user";
     assert(actualResponseBody, expectedResponseBody);
   });
-
 });
