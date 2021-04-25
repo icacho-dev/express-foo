@@ -1,6 +1,6 @@
-const controller = require("./users-router"),
-  http_mocks = require("node-mocks-http"),
-  should = require("should");
+const usersRouter = require("./users-router");
+const http_mocks = require("node-mocks-http");
+const should = require("should");
 
 function buildResponse() {
   return http_mocks.createResponse({
@@ -9,18 +9,33 @@ function buildResponse() {
 }
 
 describe("Users Express Router", function () {
-  it("Should return an static response", function (done) {
+  it("Should return all users", function (done) {
     var response = buildResponse();
     var request = http_mocks.createRequest({
       method: "GET",
       url: "/",
     });
 
-    response.on("end", function () {
+    response.on("end", () => {
       response._getData().should.equal("GET users");
       done();
     });
 
-    controller.handle(request, response);
+    usersRouter.handle(request, response);
+  });
+
+  it("Should create a user", function (done) {
+    var response = buildResponse();
+    var request = http_mocks.createRequest({
+      method: "POST",
+      url: "/",
+    });
+
+    response.on("end", () => {
+      response._getData().should.equal("POST user");
+      done();
+    });
+
+    usersRouter.handle(request, response);
   });
 });
