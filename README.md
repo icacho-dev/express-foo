@@ -1,6 +1,6 @@
 # express-foo
 
-quick refresh on the express ways
+quick refresh on the express ways, covering some of the most common scenarios
 
 ### 01 hello world
 
@@ -24,21 +24,21 @@ curl -vX DELETE http://localhost:3000/user
 
 
 ```shell
-# requests
+# request
 curl -v http://localhost:3000/users
-
-curl -vX POST http://localhost:3000/users
 # simple unit test
 npm run test
 ```
 
 ### 04 express routing
 
-expose at `/users` the users router
+expose at `/users` the users express router
 
 ```shell
-# request
+# requests
 curl -v http://localhost:3000/users
+
+curl -vX POST http://localhost:3000/users
 # simple unit test
-npm r
+npm run test
 ```
